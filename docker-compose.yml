@@ -1,0 +1,14 @@
+##
+## REQUIREMENTS TO RUN:
+##	PROJECT_VERSION = <version> of the project
+##
+
+version: '3.7'
+services:
+  application:
+    image: nginx:1.19.2
+    container_name: nginx-https-proxy
+    volumes:
+      - ./https-proxy.nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "8888:80"
